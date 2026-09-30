@@ -1,0 +1,103 @@
+# Demonstration circuit for CD4516 (BCD counter) IC.
+
+
+module library libgpsim_extras
+module library libgpsim_modules
+
+
+# Modules
+
+p12f1840.BreakOnReset = true
+p12f1840.SafeMode = true
+p12f1840.UnknownMode = true
+p12f1840.WarnMode = true
+p12f1840.tmr1_freq = 32768
+p12f1840.xpos = 132
+p12f1840.ypos = 396
+
+module load CD4510B StageOne
+StageOne.xpos = 360
+StageOne.ypos = 42
+
+module load CD4510B StageTwo
+StageTwo.xpos = 564
+StageTwo.ypos = 36
+
+# Buttons
+
+module load push_button btnLoad
+btnLoad.xpos = 12
+btnLoad.ypos = 156
+
+module load push_button btnReset
+btnReset.xpos = 12
+btnReset.ypos = 216
+
+module load push_button btnClock
+btnClock.xpos = 12
+btnClock.ypos = 96
+
+module load push_button btnUpDown
+btnUpDown.xpos = 12
+btnUpDown.ypos = 276
+
+module load push_button btnEnable
+btnEnable.xpos = 12
+btnEnable.ypos = 36
+
+
+
+
+module load push_button btnP1
+btnP1.xpos = 384
+btnP1.ypos = 252
+
+module load push_button btnP2
+btnP2.xpos = 384
+btnP2.ypos = 324
+
+module load push_button btnP3
+btnP3.xpos = 384
+btnP3.ypos = 396
+
+module load push_button btnP4
+btnP4.xpos = 384
+btnP4.ypos = 456
+
+
+
+# Conencting wires
+
+node wClk
+attach wClk btnClock.out StageOne.Clock
+
+
+node wP1
+attach wP1 btnP1.out StageOne.P1
+
+node wP2
+attach wP2 btnP2.out StageOne.P2
+
+node wP3
+attach wP3 btnP3.out StageOne.P3
+
+node wP4
+attach wP4 btnP4.out StageOne.P4
+
+node wDirn
+attach wDirn StageOne.UpDown btnUpDown.out StageTwo.UpDown
+
+node wEnable
+attach wEnable btnEnable.out StageOne.CarryIn
+
+node wLoad
+attach wLoad btnLoad.out StageOne.Preset
+
+node wReset
+attach wReset btnReset.out StageOne.Reset
+
+node wCarry
+attach wCarry StageOne.CarryOut StageTwo.Clock
+
+
+# End.

@@ -7,6 +7,9 @@ EXTRA_DIST = \
 	usart_gui/usart_gui.stc \
 	logic_test/logic_mod.asm logic_test/logic_mod.stc \
 	logic_test/Makefile  logic_test/README \
+        CD451xB/cd4510.stc CD451xB/cd4516.stc \
+        CD451xB/Makefile CD451xB/noop.asm \
+        CD451xB/README \
 	paraface_test/partest.stc paraface_test/Makefile \
 	paraface_test/partest.asm 
 

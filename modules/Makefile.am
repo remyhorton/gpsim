@@ -18,6 +18,7 @@ libgpsim_modules_la_SOURCES = \
 	i2c-eeprom.cc i2c-eeprom.h \
 	m_stimuli.h m_stimuli.cc \
 	ttl.cc ttl.h \
+	CD451xB.cc CD451xB.h \
 	vcdrecorder.cc vcdrecorder.h \
 	video.cc video.h \
 	i2c.cc i2c.h \

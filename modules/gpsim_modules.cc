@@ -68,6 +68,7 @@ support:
 #endif
 #include "m_stimuli.h"
 #include "ttl.h"
+#include "CD451xB.h"
 #include "i2c-eeprom.h"
 #include "i2c.h"
 #include "i2c2par.h"
@@ -128,6 +129,8 @@ static Module_Types available_modules[] = {
   { {"TTL165", "ttl165"}, TTL::TTL165::construct},
   { {"TTL377", "ttl377"}, TTL::TTL377::construct},
   { {"TTL595", "ttl595"}, TTL::TTL595::construct},
+  { {"cd4510b", "CD4510B"}, CD451xB::CD4510B::construct },
+  { {"cd4516b", "CD4516B"}, CD451xB::CD4516B::construct },
 
   // I2c EEPROM
   { {"I2C-EEPROM2k", "e24xx024"}, I2C_EEPROM_Modules::I2C_EE_Module::construct_2k},

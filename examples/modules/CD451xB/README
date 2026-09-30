@@ -1,0 +1,21 @@
+Test files for CD4510 and CD4516 counter ICs
+============================================
+
+The PIC12F1840 firmware is a No-Op loop and the chip is only present as
+the simulation will not run without a microcontroller. Actual control
+is all via buttons attached directly to the CD451x chip.
+
+
+To build:
+
+$ make
+
+
+To run using CD4510 (BCD counter):
+
+$ make cd4510
+
+
+To run using CD4516 (binary counter):
+
+$ make cd4516
